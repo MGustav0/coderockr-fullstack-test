@@ -18,6 +18,14 @@ class ArticlesRepository implements IArticlesRepository {
     return articles;
   }
 
+  public async findById(id: string): Promise<Article> {
+    const article = await this.ormRepository.findOne({
+      where: { id },
+    });
+
+    return article;
+  }
+
   public async findByTitle(title: string): Promise<Article | undefined> {
     const findArticle = await this.ormRepository.findOne({
       where: { title },

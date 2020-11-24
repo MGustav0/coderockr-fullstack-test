@@ -1,10 +1,21 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
-import ListArticlesService from '@modules/articles/services/ListArticleService';
+import ShowArticleService from '@modules/articles/services/ShowArticleService';
+import ListArticlesService from '@modules/articles/services/ListArticlesService';
 import CreateArticleService from '@modules/articles/services/CreateArticleService';
 
 class ArticlesController {
+  public async show(request: Request, response: Response): Promise<Response> {
+    const showArticle = container.resolve(ShowArticleService);
+
+    const { article_id } = request.params;
+
+    const article = await showArticle.execute({ article_id });
+
+    return response.json(article);
+  }
+
   public async index(request: Request, response: Response): Promise<Response> {
     const listArticles = container.resolve(ListArticlesService);
 

@@ -5,5 +5,6 @@ import ICreateArticleDTO from '@modules/articles/dtos/ICreateArticleDTO';
 export default interface IArticlesRepository {
   findAll(data: ICreateArticleDTO): Promise<Article[]>;
   findByTitle(title: string): Promise<Article | undefined>;
+  findById(article_id: string): Promise<Article | undefined>;
   create(data: ICreateArticleDTO): Promise<Article>;
 }
