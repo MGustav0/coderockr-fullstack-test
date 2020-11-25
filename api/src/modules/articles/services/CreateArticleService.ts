@@ -10,7 +10,7 @@ import IStorageProvider from '@shared/container/providers/StorageProvider/models
 interface IRequest {
   author: string;
   title: string;
-  resume;
+  resume: string;
   text: string;
   image: string;
 }

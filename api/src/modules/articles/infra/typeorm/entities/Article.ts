@@ -5,6 +5,7 @@ import {
   UpdateDateColumn,
   CreateDateColumn,
 } from 'typeorm';
+import { Expose } from 'class-transformer';
 
 @Entity('articles')
 class Article {
@@ -31,6 +32,11 @@ class Article {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @Expose({ name: 'article_url' })
+  getImageUrl(): string {
+    return `${process.env.APP_API_URL}/files/${this.image}`;
+  }
 }
 
 export default Article;

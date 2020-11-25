@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../../components/Header';
@@ -25,14 +25,23 @@ interface Article {
   resume: string;
   text: string;
   image: string;
+  // eslint-disable-next-line camelcase
+  created_at: Date;
 }
 
 const Main: React.FC = () => {
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
-    api.get(`/articles`).then(response => {
+    api.get<Article[]>(`/articles`).then(response => {
       setArticles(response.data);
+      console.log('Artigos! ', response.data);
+    });
+  }, []);
+
+  const allArticles = useMemo(() => {
+    return articles.filter(article => {
+      return article;
     });
   }, [articles]);
 
@@ -42,37 +51,33 @@ const Main: React.FC = () => {
 
       <Content>
         <SmallCards>
+          {allArticles.map(article => (
+            <SmallCard>
+              <img src={article.image} alt="Rockr Blog" />
+
+              <PreArticleSmall>
+                <span>{article.author}</span>
+
+                <h1>{article.title}</h1>
+
+                <p>{article.resume}</p>
+
+                <button type="button">
+                  <img src={forwardButton} alt="Go to the article" />
+                </button>
+              </PreArticleSmall>
+            </SmallCard>
+          ))}
+
           <SmallCard>
-            <img src={articleImage} alt="Rockr Blog" />
+            {/* <img src={article.image} alt="Rockr Blog" /> */}
 
             <PreArticleSmall>
-              <span>Kelsi Monahan</span>
+              {/* <span>{article.author}</span>
 
-              <h1>Qui occaecati vero et quibusdam non</h1>
+              <h1>{article.title}</h1>
 
-              <p>
-                Saepe quia culpa vero. Velit numquam corporis nihil sint enim
-                exercitationem. Rem nulla illum sint et id dolore voluptas{' '}
-              </p>
-
-              <button type="button">
-                <img src={forwardButton} alt="Go to the article" />
-              </button>
-            </PreArticleSmall>
-          </SmallCard>
-
-          <SmallCard>
-            <img src={articleImage} alt="Rockr Blog" />
-
-            <PreArticleSmall>
-              <span>Kelsi Monahan</span>
-
-              <h1>Qui occaecati vero et quibusdam non</h1>
-
-              <p>
-                Saepe quia culpa vero. Velit numquam corporis nihil sint enim
-                exercitationem. Rem nulla illum sint et id dolore voluptas{' '}
-              </p>
+              <p>{article.resume}</p> */}
 
               <button type="button">
                 <img src={forwardButton} alt="Go to the article" />
@@ -82,17 +87,14 @@ const Main: React.FC = () => {
         </SmallCards>
 
         <BigCard>
-          <img src={articleImage} alt="Rockr Blog" />
+          {/* <img src={article.image} alt="Rockr Blog" /> */}
 
           <PreArticleBig>
-            <span>Kelsi Monahan</span>
+            {/* <span>{article.author}</span>
 
-            <h1>Qui occaecati vero et quibusdam non</h1>
+            <h1>{article.title}</h1>
 
-            <p>
-              Saepe quia culpa vero. Velit numquam corporis nihil sint enim
-              exercitationem. Rem nulla illum sint et id dolore voluptas{' '}
-            </p>
+            <p>{article.resume}</p> */}
 
             <button type="button">
               <img src={forwardButton} alt="Go to the article" />

@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import { classToClass } from 'class-transformer';
 
 import ShowArticleService from '@modules/articles/services/ShowArticleService';
 import ListArticlesService from '@modules/articles/services/ListArticlesService';
@@ -19,7 +20,7 @@ class ArticlesController {
   public async index(request: Request, response: Response): Promise<Response> {
     const listArticles = container.resolve(ListArticlesService);
 
-    const { author, title, resume, text, image } = request.body;
+    const { author, title, resume, text, image, date } = request.body;
 
     const articles = await listArticles.execute({
       author,
@@ -27,9 +28,10 @@ class ArticlesController {
       resume,
       text,
       image,
+      date,
     });
 
-    return response.json(articles);
+    return response.json(classToClass(articles));
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
@@ -45,7 +47,7 @@ class ArticlesController {
       image: request.file.filename,
     });
 
-    return response.json(article);
+    return response.json(classToClass(article));
   }
 }
 
