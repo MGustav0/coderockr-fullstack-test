@@ -19,11 +19,12 @@ class ArticlesController {
   public async index(request: Request, response: Response): Promise<Response> {
     const listArticles = container.resolve(ListArticlesService);
 
-    const { author, title, text, image } = request.body;
+    const { author, title, resume, text, image } = request.body;
 
     const articles = await listArticles.execute({
       author,
       title,
+      resume,
       text,
       image,
     });

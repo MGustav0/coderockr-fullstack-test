@@ -37,10 +37,17 @@ class ArticlesRepository implements IArticlesRepository {
   public async create({
     author,
     title,
+    resume,
     text,
     image,
   }: ICreateArticleDTO): Promise<Article> {
-    const article = this.ormRepository.create({ author, title, text, image });
+    const article = this.ormRepository.create({
+      author,
+      title,
+      resume,
+      text,
+      image,
+    });
 
     await this.ormRepository.save(article);
 

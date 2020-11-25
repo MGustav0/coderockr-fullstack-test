@@ -6,6 +6,7 @@ import IArticlesRepository from '@modules/articles/repositories/IArticlesReposit
 interface IRequest {
   author: string;
   title: string;
+  resume: string;
   text: string;
   image: string;
 }
@@ -20,12 +21,14 @@ class ListArticlesService {
   public async execute({
     author,
     title,
+    resume,
     text,
     image,
   }: IRequest): Promise<Article[]> {
     const articles = await this.articlesRepository.findAll({
       author,
       title,
+      resume,
       text,
       image,
     });

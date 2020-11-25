@@ -24,6 +24,11 @@ export default class CreateArticle1606161421618 implements MigrationInterface {
             isNullable: false,
           },
           {
+            name: 'resume',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
             name: 'text',
             type: 'varchar',
             isNullable: false,

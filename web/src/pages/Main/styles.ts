@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   max-width: 1920px;
   max-height: max-content;
-  background: linear-gradient(90deg, #f1a10a 0%, #342303 100%);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
 `;
 
 export const Content = styled.div`
@@ -23,7 +22,6 @@ export const SmallCard = styled.section`
   width: 960px;
   height: 320px;
   margin: 160px 0 80px 0;
-  border: none;
   display: grid;
   grid-template-areas: 'img PreArticle';
   grid-template-columns: 320px 620px;
@@ -39,7 +37,6 @@ export const BigCard = styled.section`
   width: 1280px;
   height: 640px;
   margin-top: 80px;
-  border: none;
   display: grid;
   grid-template-areas: 'img PreArticle';
   grid-template-columns: 640px 640px;

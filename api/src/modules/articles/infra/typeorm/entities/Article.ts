@@ -12,6 +12,9 @@ class Article {
   title: string;
 
   @Column()
+  resume: string;
+
+  @Column()
   text: string;
 
   @Column()
