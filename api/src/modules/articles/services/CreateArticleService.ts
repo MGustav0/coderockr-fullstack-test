@@ -10,6 +10,7 @@ import IStorageProvider from '@shared/container/providers/StorageProvider/models
 interface IRequest {
   author: string;
   title: string;
+  resume;
   text: string;
   image: string;
 }
@@ -27,6 +28,7 @@ class CreateArticleService {
   public async execute({
     author,
     title,
+    resume,
     text,
     image,
   }: IRequest): Promise<Article> {
@@ -41,6 +43,7 @@ class CreateArticleService {
     const article = await this.articlesRepository.create({
       author,
       title,
+      resume,
       text,
       image,
     });

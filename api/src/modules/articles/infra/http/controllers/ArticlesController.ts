@@ -33,13 +33,14 @@ class ArticlesController {
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
-    const { author, title, text } = request.body;
+    const { author, title, resume, text } = request.body;
 
     const createArticle = container.resolve(CreateArticleService);
 
     const article = await createArticle.execute({
       author,
       title,
+      resume,
       text,
       image: request.file.filename,
     });

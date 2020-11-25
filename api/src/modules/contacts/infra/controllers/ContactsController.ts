@@ -1,23 +1,23 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
-import ListArticlesService from '@modules/contacts/services/ListContactService';
+import ListContactsService from '@modules/contacts/services/ListContactsService';
 import CreateContactService from '@modules/contacts/services/CreateContactService';
 
 class ContactsController {
   public async index(request: Request, response: Response): Promise<Response> {
-    const listArticles = container.resolve(ListArticlesService);
+    const listContacts = container.resolve(ListContactsService);
 
-    const { author, title, text, image } = request.body;
+    const { name, email, phone, post } = request.body;
 
-    const articles = await listArticles.execute({
-      author,
-      title,
-      text,
-      image,
+    const contacts = await listContacts.execute({
+      name,
+      email,
+      phone,
+      post,
     });
 
-    return response.json(articles);
+    return response.json(contacts);
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
@@ -25,14 +25,14 @@ class ContactsController {
 
     const createContact = container.resolve(CreateContactService);
 
-    const article = await createContact.execute({
+    const contact = await createContact.execute({
       name,
       email,
       phone,
       post,
     });
 
-    return response.json(article);
+    return response.json(contact);
   }
 }
 
