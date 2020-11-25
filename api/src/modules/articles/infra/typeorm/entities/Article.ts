@@ -33,7 +33,7 @@ class Article {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @Expose({ name: 'article_url' })
+  @Expose({ name: 'imageUrl' })
   getImageUrl(): string {
     return `${process.env.APP_API_URL}/files/${this.image}`;
   }

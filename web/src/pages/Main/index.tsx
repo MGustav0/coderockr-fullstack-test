@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import Header from '../../components/Header';
 
-import articleImage from '../../assets/show01.png';
 import forwardButton from '../../assets/forwardButton.svg';
 
 import {
@@ -24,7 +23,7 @@ interface Article {
   title: string;
   resume: string;
   text: string;
-  image: string;
+  imageUrl: string;
   // eslint-disable-next-line camelcase
   created_at: Date;
 }
@@ -35,7 +34,6 @@ const Main: React.FC = () => {
   useEffect(() => {
     api.get<Article[]>(`/articles`).then(response => {
       setArticles(response.data);
-      console.log('Artigos! ', response.data);
     });
   }, []);
 
@@ -52,8 +50,8 @@ const Main: React.FC = () => {
       <Content>
         <SmallCards>
           {allArticles.map(article => (
-            <SmallCard>
-              <img src={article.image} alt="Rockr Blog" />
+            <SmallCard key={article.id}>
+              <img src={article.imageUrl} alt={article.title} />
 
               <PreArticleSmall>
                 <span>{article.author}</span>
@@ -69,38 +67,42 @@ const Main: React.FC = () => {
             </SmallCard>
           ))}
 
-          <SmallCard>
-            {/* <img src={article.image} alt="Rockr Blog" /> */}
+          {allArticles.map(article => (
+            <SmallCard key={article.id}>
+              <img src={article.imageUrl} alt={article.title} />
 
-            <PreArticleSmall>
-              {/* <span>{article.author}</span>
+              <PreArticleSmall>
+                <span>{article.author}</span>
+
+                <h1>{article.title}</h1>
+
+                <p>{article.resume}</p>
+
+                <button type="button">
+                  <img src={forwardButton} alt="Go to the article" />
+                </button>
+              </PreArticleSmall>
+            </SmallCard>
+          ))}
+        </SmallCards>
+
+        {allArticles.map(article => (
+          <BigCard key={article.id}>
+            <img src={article.imageUrl} alt={article.title} />
+
+            <PreArticleBig>
+              <span>{article.author}</span>
 
               <h1>{article.title}</h1>
 
-              <p>{article.resume}</p> */}
+              <p>{article.resume}</p>
 
               <button type="button">
                 <img src={forwardButton} alt="Go to the article" />
               </button>
-            </PreArticleSmall>
-          </SmallCard>
-        </SmallCards>
-
-        <BigCard>
-          {/* <img src={article.image} alt="Rockr Blog" /> */}
-
-          <PreArticleBig>
-            {/* <span>{article.author}</span>
-
-            <h1>{article.title}</h1>
-
-            <p>{article.resume}</p> */}
-
-            <button type="button">
-              <img src={forwardButton} alt="Go to the article" />
-            </button>
-          </PreArticleBig>
-        </BigCard>
+            </PreArticleBig>
+          </BigCard>
+        ))}
       </Content>
     </Container>
   );
