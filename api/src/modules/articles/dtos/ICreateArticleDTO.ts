@@ -1,8 +1,9 @@
 export default interface ICreateArticleDTO {
-  article_id?: string;
+  articleId?: string;
   author: string;
   title: string;
   resume: string;
   text: string;
   image: string;
+  date?: Date;
 }

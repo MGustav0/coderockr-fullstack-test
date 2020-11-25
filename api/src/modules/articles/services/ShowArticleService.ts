@@ -4,7 +4,7 @@ import Article from '@modules/articles/infra/typeorm/entities/Article';
 import IArticlesRepository from '@modules/articles/repositories/IArticlesRepository';
 
 interface IRequest {
-  article_id: string;
+  articleId: string;
 }
 
 @injectable()
@@ -14,8 +14,8 @@ class ShowArticleService {
     private articlesRepository: IArticlesRepository,
   ) {}
 
-  public async execute({ article_id }: IRequest): Promise<Article> {
-    const article = await this.articlesRepository.findById(article_id);
+  public async execute({ articleId }: IRequest): Promise<Article> {
+    const article = await this.articlesRepository.findById(articleId);
 
     return article;
   }

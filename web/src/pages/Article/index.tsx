@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { format } from 'date-fns';
 
 import Header from '../../components/Header';
 
@@ -6,7 +7,29 @@ import articleImage from '../../assets/show01.png';
 
 import { Container, ArticleContainer, Intro, Text } from './styles';
 
+import api from '../../services/apiClient';
+
+interface Article {
+  articleId: string;
+}
+
 const Article: React.FC = () => {
+  // const [articleDate, setArticleDate] = useState(new Date());
+
+  // useEffect(() => {
+  //   api.get(`/articles/${articleId}`, {
+  //     params: {
+  //       id: articleDate.
+  //     }
+  //   });
+
+  //   console.log('O artigo é: ', articleId);
+  // }, [articleDate]);
+
+  // const date = useMemo(() => {
+  //   return format();
+  // });
+
   return (
     <Container>
       <Header />

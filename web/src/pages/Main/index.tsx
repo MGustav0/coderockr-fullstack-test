@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../../components/Header';
@@ -16,7 +16,26 @@ import {
   PreArticleBig,
 } from './styles';
 
+import api from '../../services/apiClient';
+
+interface Article {
+  id: string;
+  author: string;
+  title: string;
+  resume: string;
+  text: string;
+  image: string;
+}
+
 const Main: React.FC = () => {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    api.get(`/articles`).then(response => {
+      setArticles(response.data);
+    });
+  }, [articles]);
+
   return (
     <Container>
       <Header />

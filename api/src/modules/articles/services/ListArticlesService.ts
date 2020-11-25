@@ -9,6 +9,7 @@ interface IRequest {
   resume: string;
   text: string;
   image: string;
+  date: Date;
 }
 
 @injectable()
@@ -24,6 +25,7 @@ class ListArticlesService {
     resume,
     text,
     image,
+    date,
   }: IRequest): Promise<Article[]> {
     const articles = await this.articlesRepository.findAll({
       author,
@@ -31,6 +33,7 @@ class ListArticlesService {
       resume,
       text,
       image,
+      date,
     });
 
     return articles;

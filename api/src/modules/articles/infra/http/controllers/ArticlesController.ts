@@ -9,9 +9,9 @@ class ArticlesController {
   public async show(request: Request, response: Response): Promise<Response> {
     const showArticle = container.resolve(ShowArticleService);
 
-    const { article_id } = request.params;
+    const { articleId } = request.params;
 
-    const article = await showArticle.execute({ article_id });
+    const article = await showArticle.execute({ articleId });
 
     return response.json(article);
   }
