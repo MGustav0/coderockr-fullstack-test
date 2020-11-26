@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface ICard {
+  isBig: boolean;
+}
 
 export const Container = styled.div`
   max-width: 1920px;
@@ -7,17 +11,14 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  display: grid;
+  grid-template-areas:
+    'SmallCard SmallCard'
+    'BigCard BigCard';
+  grid-template-columns: 960px 960px;
 `;
 
-export const SmallCards = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-export const SmallCard = styled.section`
+export const Card = styled.section<ICard>`
   background-color: #ffffff;
   width: 960px;
   height: 320px;
@@ -30,6 +31,22 @@ export const SmallCard = styled.section`
     width: 320px;
     height: 320px;
   }
+
+  ${props =>
+    props.isBig &&
+    css`
+      width: 1280px;
+      height: 640px;
+      margin-top: 80px;
+      display: grid;
+      grid-template-areas: 'img PreArticle';
+      grid-template-columns: 640px 640px;
+
+      img {
+        width: 640px;
+        height: 640px;
+      }
+    `}
 `;
 
 export const BigCard = styled.section`
@@ -47,7 +64,7 @@ export const BigCard = styled.section`
   }
 `;
 
-export const PreArticleSmall = styled.section`
+export const Intro = styled.section`
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -91,7 +108,7 @@ export const PreArticleSmall = styled.section`
   }
 `;
 
-export const PreArticleBig = styled.section`
+export const IntroBig = styled.section`
   display: flex;
   flex-direction: column;
   align-self: center;
