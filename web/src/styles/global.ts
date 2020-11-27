@@ -10,6 +10,7 @@ export default createGlobalStyle`
 
   body {
     background: linear-gradient(90deg, #f1a10a 0%, #342303 100%);
+    width: 100vw;
     color: #2D2D2D;
     display: flex;
     flex-direction: row;

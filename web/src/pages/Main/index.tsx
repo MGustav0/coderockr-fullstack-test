@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../../components/Header';
 
 import forwardButton from '../../assets/forwardButton.svg';
 
-import { Container, Content, Card, BigCard, Intro, IntroBig } from './styles';
+import { Container, Content, Card, Intro } from './styles';
 
 import api from '../../services/apiClient';
 
@@ -16,13 +16,10 @@ interface Article {
   resume: string;
   text: string;
   imageUrl: string;
-  // eslint-disable-next-line camelcase
-  created_at: Date;
 }
 
 const Main: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
-  const [isBig, setIsBig] = useState(false);
 
   useEffect(() => {
     api.get<Article[]>(`/articles`).then(response => {
@@ -30,56 +27,40 @@ const Main: React.FC = () => {
     });
   }, []);
 
-  const allArticles = useMemo(() => {
+  const handleAllArticles = useMemo(() => {
     return articles.filter(article => {
       return article;
     });
   }, [articles]);
-
-  const handleBigCards = useCallback(() => {
-    const bigCards = articles.length % 3;
-
-    if (bigCards === 0) {
-      setIsBig(true);
-    }
-
-    return setIsBig;
-  }, [articles.length]);
 
   return (
     <Container>
       <Header />
 
       <Content>
-        {allArticles.map(article =>
-          handleBigCards() ? (
-            <Card key={article.id} isBig={isBig}>
+        {handleAllArticles.map((article, index) => {
+          const enlarge = (index + 1) % 3 === 0;
+          const isLeft = (index + 1) % 2 === 0 && (index + 1) % 3 === 0;
+
+          return (
+            <Card
+              key={article.id}
+              leftCard={isLeft}
+              enlargeCard={isLeft || enlarge}
+            >
               <img src={article.imageUrl} alt={article.title} />
-              <Intro>
+              <div>
                 <span>{article.author}</span>
                 <h1>{article.title}</h1>
                 <p>{article.resume}</p>
 
-                <button type="button">
+                <Link to={`/articles/${article.id}`}>
                   <img src={forwardButton} alt="Go to the article" />
-                </button>
-              </Intro>
+                </Link>
+              </div>
             </Card>
-          ) : (
-            <Card key={article.id} isBig={isBig}>
-              <img src={article.imageUrl} alt={article.title} />
-              <Intro>
-                <span>{article.author}</span>
-                <h1>{article.title}</h1>
-                <p>{article.resume}</p>
-
-                <button type="button">
-                  <img src={forwardButton} alt="Go to the article" />
-                </button>
-              </Intro>
-            </Card>
-          ),
-        )}
+          );
+        })}
       </Content>
     </Container>
   );

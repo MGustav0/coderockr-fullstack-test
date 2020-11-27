@@ -9,8 +9,8 @@ import Main from '../pages/Main';
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={Main} />
-    <Route path="/article" exact component={Article} />
-    <Route path="/contact" exact component={Contact} />
+    <Route path="/articles/:id" component={Article} />
+    <Route path="/contact" component={Contact} />
   </Switch>
 );
 
