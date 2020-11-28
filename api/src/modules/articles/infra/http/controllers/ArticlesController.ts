@@ -14,7 +14,7 @@ class ArticlesController {
 
     const article = await showArticle.execute({ articleId });
 
-    return response.json(article);
+    return response.json(classToClass(article));
   }
 
   public async index(request: Request, response: Response): Promise<Response> {

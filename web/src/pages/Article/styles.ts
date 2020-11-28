@@ -16,7 +16,7 @@ export const ArticleContainer = styled.div`
   grid-template-areas:
     'img Intro'
     'Text Text';
-  grid-template-columns: 640px 640px;
+  grid-template-columns: 1fr 1fr;
 
   img {
     width: 640px;
@@ -35,11 +35,13 @@ export const Intro = styled.div`
   time {
     font-size: 18px;
     color: #032937;
+    margin-bottom: 44px;
   }
 
   span {
     font-size: 24px;
     color: #2d2d2d;
+    margin-bottom: 61px;
   }
 
   h1 {
@@ -51,6 +53,7 @@ export const Intro = styled.div`
 
 export const Text = styled.div`
   width: 1280px;
+  grid-column: 1/3;
 
   p {
     width: 780px;

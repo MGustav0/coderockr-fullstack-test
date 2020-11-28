@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 
 import forwardButton from '../../assets/forwardButton.svg';
 
-import { Container, Content, Card, Intro } from './styles';
+import { Container, Content, Card } from './styles';
 
 import api from '../../services/apiClient';
 

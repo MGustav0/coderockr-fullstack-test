@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import ContactForm from '../Contact';
 
 import {
   Container,
@@ -12,6 +14,8 @@ import {
 } from './styles';
 
 const Header: React.FC = () => {
+  const [isContactVisible, setIsContactVisible] = useState(false);
+
   return (
     <Container>
       <HeaderContainer>
@@ -23,8 +27,9 @@ const Header: React.FC = () => {
             <Posts>
               <Link to="/">Posts</Link>
             </Posts>
-            <Contact>
-              <Link to="/contact">Contact</Link>
+            <Contact onClick={() => setIsContactVisible(true)}>
+              {isContactVisible ? <ContactForm /> : null}
+              Contact
             </Contact>
           </Menu>
         </HeaderContent>

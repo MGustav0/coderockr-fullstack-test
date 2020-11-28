@@ -5,9 +5,10 @@ import { Container } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
+  label: string;
 }
 
-const Form: React.FC<InputProps> = ({ name, ...rest }) => {
+const Input: React.FC<InputProps> = ({ name, label, ...rest }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const { fieldName, registerField } = useField(name);
@@ -22,9 +23,10 @@ const Form: React.FC<InputProps> = ({ name, ...rest }) => {
 
   return (
     <Container>
-      <input ref={inputRef} {...rest} />
+      {label && <label htmlFor={fieldName}>{label}</label>}
+      <input ref={inputRef} id={fieldName} {...rest} />
     </Container>
   );
 };
 
-export default Form;
+export default Input;

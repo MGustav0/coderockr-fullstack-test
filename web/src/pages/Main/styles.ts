@@ -137,5 +137,3 @@ export const Card = styled.section<ContainerProps>`
       }
     `}
 `;
-
-export const Intro = styled.div<ContainerProps>``;

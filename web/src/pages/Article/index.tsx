@@ -1,5 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { format } from 'date-fns';
+import React, { useEffect, useState } from 'react';
+import { useRouteMatch } from 'react-router-dom';
+import { format, parseISO } from 'date-fns';
 
 import Header from '../../components/Header';
 
@@ -7,26 +8,40 @@ import { Container, ArticleContainer, Intro, Text } from './styles';
 
 import api from '../../services/apiClient';
 
-interface IArticle {
+interface ArticleParams {
+  id: string;
+}
+
+interface Article {
   id: string;
   author: string;
   title: string;
   text: string;
+  image: string;
   imageUrl: string;
   // eslint-disable-next-line camelcase
   created_at: Date;
+  dateFormatted: string;
 }
 
 const Article: React.FC = () => {
-  const [article, setArticle] = useState<IArticle>();
+  const { params } = useRouteMatch<ArticleParams>();
+
+  const [article, setArticle] = useState<Article | null>(null);
 
   useEffect(() => {
-    // api.get<IArticle>(`/articles/${article?.id}`).then(response => {
-    //   setArticle(response.data);
-    //   console.log(`O que veio? `, response.data);
-    // });
-    // console.log(`O que veio? `, article?.id);
-  }, []);
+    api.get(`articles/${params.id}`).then(response => {
+      const articleFormatted = {
+        ...response.data,
+        dateFormatted: format(
+          parseISO(response.data.created_at),
+          'MMM dd, yyyy',
+        ),
+      };
+
+      setArticle(articleFormatted);
+    });
+  }, [params.id]);
 
   return (
     <Container>
@@ -36,10 +51,8 @@ const Article: React.FC = () => {
         <img src={article?.imageUrl} alt={article?.title} />
 
         <Intro>
-          <time>{article?.created_at}</time>
-
+          <time>{article?.dateFormatted}</time>
           <span>{article?.author}</span>
-
           <h1>{article?.title}</h1>
         </Intro>
 

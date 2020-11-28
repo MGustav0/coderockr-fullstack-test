@@ -48,6 +48,7 @@
     "no-unused-expressions": "off",
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
+    "react-hooks/prop-types": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
-export const Container = styled.div`
+export const Container = styled.header`
   position: fixed;
   margin-top: 0px !important;
   z-index: 2;
@@ -10,7 +11,7 @@ export const Container = styled.div`
   height: 100px;
 `;
 
-export const HeaderContainer = styled.header`
+export const HeaderContainer = styled.div`
   background: #2d2d2d;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   align-items: center;
@@ -34,6 +35,10 @@ export const Home = styled.div`
   a {
     text-decoration: none;
     color: #ffffff;
+
+    &:hover {
+      color: ${darken(0.3, '#ffffff')};
+    }
   }
 `;
 
@@ -47,6 +52,9 @@ export const Menu = styled.div`
   a {
     text-decoration: none;
     color: #ffffff;
+    &:hover {
+      color: ${darken(0.3, '#ffffff')};
+    }
   }
 `;
 
@@ -54,4 +62,14 @@ export const Posts = styled.div`
   margin-right: 118px;
 `;
 
-export const Contact = styled.div``;
+export const Contact = styled.div`
+  font-size: 32px;
+  font-weight: 500;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  &:hover {
+    color: ${darken(0.3, '#ffffff')};
+  }
+`;
