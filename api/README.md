@@ -8,7 +8,7 @@
 
 ## Tópicos
 
-🔹 [Descrição do projeto](#:link:-descrição-do-projeto)
+🔹 [Descrição do projeto](#link-descrição-do-projeto)
 
 🔹 [Funcionalidades](#information_source-funcionalidades)
 
@@ -26,11 +26,12 @@
 
 🔹 [Tarefas em aberto](#pencil-tarefas-em-aberto)
 
-🔹 [Tarefas em aberto](#octopus-desenvolvedores)
+🔹 [Desenvolvedores](#octopus-desenvolvedores)
 
 ## :link: Descrição do projeto
 
 <p align="justify">
+  
   Neste [projeto-desafio](https://github.com/Coderockr/fullstack-test) demonstrei meus conhecimentos em TypeScript, NodeJS e PostgreSQL.
 </p>
 
