@@ -27,6 +27,7 @@ Front-end web: ![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-React
 ## :link: Descrição do projeto
 
 <p align="justify">
+  
   Neste [projeto-desafio](https://github.com/Coderockr/fullstack-test) demonstro meus conhecimentos em TypeScript, NodeJS, PostgreSQL e ReactJS.
 
   Bibliotecas usadas e o porquê:
