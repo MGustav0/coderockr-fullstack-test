@@ -71,7 +71,27 @@ Há somente 1 teste criado, apenas para fins de demonstração.
 
 ### Home
 
-<img src="" width="640" heigth="360" />
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/web/01_-_home_1920p.png" width="640" heigth="360" />
+
+### Home em 1280 pixels
+
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/web/02_-_home_1280p.png" width="640" heigth="360" />
+
+### Home em 540 pixels
+
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/web/03_-_home_540p.png" width="640" heigth="360" />
+
+### Página de Artigo
+
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/web/04_-_article_1920p.png" width="640" heigth="360" />
+
+### Página de artigo em 1280 pixels
+
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/web/05_-_article_1280p.png" width="640" heigth="360" />
+
+### Modal de Contato
+
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/web/06_-_modal.png" width="640" heigth="360" />
 
 ## :hammer: Resolvendo Problemas
 
