@@ -1,10 +1,8 @@
-# GoBarber 2.0
+# Rockr Blog
 
 General: ![Badge](https://img.shields.io/badge/types-Flow%20%7C%20TypeScript-blue)
 
-Back-end: ![Badge](https://img.shields.io/badge/node-%3E%3D%2012.18.2-brightgreen)
-
-Front-end mobile: ![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-React%20Native-blueviolet)
+Back-end: ![Badge](https://img.shields.io/badge/node-%3E%3D%2012.18.2-brightgreen) ![Badge](https://img.shields.io/badge/PostgreSQL-v12.0-lightblue)
 
 Front-end web: ![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-ReactJS-blueviolet)
 
@@ -29,7 +27,7 @@ Front-end web: ![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-React
 ## :link: Descrição do projeto
 
 <p align="justify">
-  Neste [projeto-desafio](https://github.com/Coderockr/fullstack-test) demonstro meus conhecimentos em TypeScript, NodeJS, PostgreSQL e TypeScript ReactJS.
+  Neste [projeto-desafio](https://github.com/Coderockr/fullstack-test) demonstro meus conhecimentos em TypeScript, NodeJS, PostgreSQL e ReactJS.
 
   Bibliotecas usadas e o porquê:
 
@@ -61,14 +59,16 @@ Front-end web: ![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-React
 
 Para rodar a aplicação basta acessar as pastas abaixo, nesta ordem, e seguir os respectivos README.md:
 
-- [server]() - para instalar o servidor;
-- [web]() - para instalar o front-end web;
+- [server](https://github.com/MGustav0/coderockr-fullstack-test/tree/test/api) - para instalar o servidor;
+- [web](https://github.com/MGustav0/coderockr-fullstack-test/tree/test/web) - para instalar o front-end web;
 
 ## :scroll: Layouts da Aplicação
 
 ### 🌐 Web
 
-<img src="https://github.com/MGustav0/gobarber2.0/blob/master/extras/screenshots/web/04_-_dashboard.png" width="640" heigth="360" />
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/web/01_-_home_1920p.png" width="640" heigth="360" />
+
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/web/04_-_article_1920p.png" width="640" heigth="360" />
 
 ## :hammer: Resolvendo Problemas
 
