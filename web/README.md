@@ -30,7 +30,7 @@
 ## :link: Descrição do projeto
 
 <p align="justify">
-  Neste [projeto-desafio](https://github.com/Coderockr/fullstack-test) demonstro meus conhecimentos em TypeScript ReactJS.
+  Neste [projeto](https://github.com/Coderockr/fullstack-test) demonstro meus conhecimentos em TypeScript ReactJS.
 
   Implementei a lógica de recuperar dados da API e apresentar na tela do modo como [descrito no design pelo Figma](https://www.figma.com/file/ImqUersZbn3WGyBdiEjlwKyQ/Coderockr-Front-end-Test).
 </p>
