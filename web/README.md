@@ -51,9 +51,9 @@
 
 ⚠️ [Yarn](https://yarnpkg.com/getting-started/install)
 
-❗️ Você precisará seguir os passos a seguir para poder rodar a aplicação na sua máquina.
-
 ## :arrow_forward: Como rodar a aplicação
+
+❗️ Você precisará seguir os passos a seguir para poder rodar a aplicação na sua máquina.
 
 Navegue até a pasta criada e abra no Visual Studio Code, execute o comando `yarn` dentro da pasta no seu terminal para instalar todas as dependências. Após a instalação digite: `yarn start`.
 
