@@ -20,7 +20,7 @@ interface FormData {
 
 type Props = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onClose: any;
+  onClose?: any;
 };
 
 const Contact: React.FC<Props> = ({ onClose }) => {
