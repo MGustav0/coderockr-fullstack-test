@@ -86,6 +86,8 @@ Na mesma pasta do projeto, no terminal, digite:
 yarn test
 ```
 
+Há somente 1 teste criado, apenas para fins de demonstração.
+
 ## :sleeping: Insomnia
 
 Para fazer o download do [insomnia](https://insomnia.rest/download/), para utilizar o mesmo workspace utilizado no projeto clique [aqui]().
