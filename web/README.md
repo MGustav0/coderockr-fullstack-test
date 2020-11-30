@@ -65,6 +65,8 @@ Na mesma pasta do projeto, no terminal, digite:
 yarn test
 ```
 
+Há somente 1 teste criado, apenas para fins de demonstração.
+
 ## :scroll: Layout da Aplicação
 
 ### Home
