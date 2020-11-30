@@ -53,9 +53,10 @@
 
 ⚠️ [PostgreSQL Docker](https://hub.docker.com/_/postgres)
 
-❗️ Você precisará seguir os passos a seguir para poder rodar a aplicação na sua máquina.
 
 ## :floppy_disk: Iniciar/Configurar banco de dados
+
+❗️ Você precisará seguir os passos a seguir para poder rodar a aplicação na sua máquina.
 
 Ter Docker e as imagens PostgreSQL, MongoDB e Redis instalados.
 
