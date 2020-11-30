@@ -93,10 +93,6 @@ Há somente 1 teste criado, apenas para fins de demonstração.
 
 <img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/web/06_-_modal.png" width="640" heigth="360" />
 
-## :hammer: Resolvendo Problemas
-
-Caso encontre algum problema, bug ou erro me conte [aqui]()!
-
 ## :octopus: Desenvolvedores
 
 | [<img src="https://avatars1.githubusercontent.com/u/18315899?s=460&u=54d9c6ea66f2b27120bf39dabe1d36ff22a92b9d&v=4>][(https://github.com/MGustav0](https://avatars1.githubusercontent.com/u/18315899?s=460&u=54d9c6ea66f2b27120bf39dabe1d36ff22a92b9d&v=4))" width=115><br><sub>Gustavo Moreira</sub>](https://github.com/MGustav0) |
