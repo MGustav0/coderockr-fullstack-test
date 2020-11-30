@@ -7,7 +7,7 @@
 
 ## Tópicos
 
-🔹 [Descrição do projeto](#:link:-descrição-do-projeto)
+🔹 [Descrição do projeto](#link-descrição-do-projeto)
 
 🔹 [Funcionalidades](#information_source-funcionalidades)
 
