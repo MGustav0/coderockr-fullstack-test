@@ -22,7 +22,7 @@
 
 🔹 [Insomnia](#sleeping-insomnia)
 
-🔹 [Layout da Aplicação](#scroll-layout-da-aplicação)
+🔹 [Dados da API](#scroll-dados-da-api)
 
 🔹 [Tarefas em aberto](#pencil-tarefas-em-aberto)
 
@@ -90,11 +90,33 @@ Há somente 1 teste criado, apenas para fins de demonstração.
 
 ## :sleeping: Insomnia
 
-Para fazer o download do [insomnia](https://insomnia.rest/download/), para utilizar o mesmo workspace utilizado no projeto clique [aqui]().
+Para fazer o download do [insomnia](https://insomnia.rest/download/), para utilizar o mesmo workspace utilizado no projeto clique [aqui](https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/Insomnia_2020-11-29.json), baixe e importe no seu insominia.
 
-## :scroll: Layout da Aplicação
+## :scroll: Dados da API
 
-Dados do Insomnia:
+### Criar artigo
+
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/api/01_-_create-article.png" width="640" heigth="360" />
+
+### Listar artigos
+
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/api/02_-_list-articles.png" width="640" heigth="360" />
+
+### Mostrar artigo
+
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/api/03_-_show-article.png" width="640" heigth="360" />
+
+### Mostrar imagem
+
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/api/04_-_show-image.png" width="640" heigth="360" />
+
+### Criar contato
+
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/api/05_-_create-contact.png" width="640" heigth="360" />
+
+### Listar contatos
+
+<img src="https://github.com/MGustav0/coderockr-fullstack-test/blob/test/extras/screenshots/api/06_-_list-contacts.png" width="640" heigth="360" />
 
 ## :pencil: Tarefas em aberto
 
