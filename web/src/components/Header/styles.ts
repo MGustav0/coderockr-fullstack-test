@@ -18,19 +18,28 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderContent = styled.div`
-  display: flex;
-  max-width: 1920px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 100%;
+  width: 1280px;
   height: 100px;
-  margin: 0 auto;
+  margin: auto;
   align-items: center;
+
+  @media screen and (max-width: 1280px) {
+    width: 960px;
+  }
+
+  @media screen and (max-width: 540px) {
+    width: 539px;
+    height: 50px;
+  }
 `;
 
 export const Home = styled.div`
-  margin-right: auto;
-  margin-left: 320px;
-  flex-direction: row;
   font-size: 32px;
   font-weight: 500;
+  justify-self: flex-start;
 
   a {
     text-decoration: none;
@@ -39,13 +48,16 @@ export const Home = styled.div`
     &:hover {
       color: ${darken(0.3, '#ffffff')};
     }
+  }
+
+  @media screen and (max-width: 540px) {
+    font-size: 16px;
   }
 `;
 
 export const Menu = styled.div`
-  display: flex;
-  margin-left: auto;
-  margin-right: 320px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   font-size: 32px;
   font-weight: 500;
 
@@ -56,20 +68,36 @@ export const Menu = styled.div`
       color: ${darken(0.3, '#ffffff')};
     }
   }
+
+  @media screen and (max-width: 1920px) {
+  }
+
+  @media screen and (max-width: 540px) {
+    font-size: 16px;
+  }
 `;
 
 export const Posts = styled.div`
-  margin-right: 118px;
+  justify-self: flex-end;
 `;
 
-export const Contact = styled.div`
+export const Contact = styled.button`
   font-size: 32px;
   font-weight: 500;
   color: #ffffff;
+
+  background-color: transparent;
+  border: none;
+
+  justify-self: flex-end;
 
   cursor: pointer;
 
   &:hover {
     color: ${darken(0.3, '#ffffff')};
+  }
+
+  @media screen and (max-width: 540px) {
+    font-size: 16px;
   }
 `;

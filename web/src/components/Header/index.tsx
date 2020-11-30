@@ -27,10 +27,10 @@ const Header: React.FC = () => {
             <Posts>
               <Link to="/">Posts</Link>
             </Posts>
-            <Contact onClick={() => setIsContactVisible(true)}>
-              {isContactVisible ? <ContactForm /> : null}
-              Contact
-            </Contact>
+            <Contact onClick={() => setIsContactVisible(true)}>Contact</Contact>
+            {isContactVisible ? (
+              <ContactForm onClose={() => setIsContactVisible(false)} />
+            ) : null}
           </Menu>
         </HeaderContent>
       </HeaderContainer>

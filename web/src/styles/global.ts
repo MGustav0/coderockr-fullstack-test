@@ -8,6 +8,10 @@ export default createGlobalStyle`
     outline: 0;
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     background: linear-gradient(90deg, #f1a10a 0%, #342303 100%);
     width: 100vw;
@@ -15,7 +19,7 @@ export default createGlobalStyle`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center
+    align-items: center;
   }
 
   body, input, button {

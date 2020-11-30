@@ -29,12 +29,13 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
 
-  button {
-    cursor: pointer;
+  justify-content: center;
+  align-items: center;
 
+  button {
     background-color: transparent;
-    color: #000000;
     border: none;
+    color: #000000;
     outline: none;
     width: 28px;
     height: 28px;
@@ -51,79 +52,32 @@ export const Content = styled.div`
     align-self: center;
     margin-bottom: 49px;
   }
-`;
 
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  width: 100%;
-  height: 100%;
-
-  label {
-    display: block;
-    font-size: 24px;
-    font-weight: 400;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-
-  button {
-    cursor: pointer;
-
-    display: block;
-    background-color: #2d2d2d;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    width: 230px;
-    height: 60px;
-    transition: background-color 0.2s;
-
-    &:hover {
-      background: ${lighten(0.2, '#2d2d2d')};
-    }
-  }
-`;
-
-export const Input = styled.input`
-  width: 100%;
-  margin-bottom: 48px;
-  padding: 12px 16px;
-  border-radius: 5px;
-  border: 2px solid #ddd;
-  font-size: 24px;
-  color: #444;
-  transition: border-color 0.2s;
-
-  &:focus {
-    border-color: #111;
-  }
-
-  &::placeholder {
-    font-size: 24px;
-    font-weight: 400;
-  }
-
-  .textarea {
+  form {
     width: 100%;
-    height: 200px;
-    margin-bottom: 72px;
-    padding: 12px 16px;
-    border-radius: 5px;
-    border: 2px solid #ddd;
-    font-size: 24px;
-    color: #444;
-    transition: border-color 0.2s;
+    max-width: 565px;
+    height: 100%;
 
-    &::placeholder {
-      font-size: 24px;
-      font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .submitButton {
+      display: block;
+      background-color: #2d2d2d;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      width: 230px;
+      height: 60px;
+      transition: background-color 0.2s;
+
+      align-self: center;
+
+      &:hover {
+        background: ${lighten(0.2, '#2d2d2d')};
+      }
     }
-  }
-
-  .textarea:focus {
-    border-color: #111;
   }
 `;

@@ -18,7 +18,11 @@ interface FormData {
   post: string;
 }
 
-const Contact: React.FC = () => {
+type Props = {
+  onClose: any;
+};
+
+const Contact: React.FC<Props> = ({ onClose }) => {
   const formRef = useRef<FormHandles>(null);
 
   const handleSubmit = useCallback(async (data: FormData) => {
@@ -33,11 +37,11 @@ const Contact: React.FC = () => {
   return (
     <Container>
       <Content>
-        <button type="button">
+        <button type="button" onClick={onClose}>
           <img src={exitButton} alt="Exit contact" />
         </button>
 
-        <h1>Contact</h1>
+        <h1>Contact </h1>
         <Form ref={formRef} onSubmit={handleSubmit}>
           <Input name="name" label="Name" placeholder="Fill your name" />
 
@@ -56,7 +60,7 @@ const Contact: React.FC = () => {
             className="textarea"
           />
 
-          <button type="submit">
+          <button type="submit" className="submitButton">
             <img src={submitButton} alt="Submit Contact" /> Submit
           </button>
         </Form>
