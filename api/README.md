@@ -76,13 +76,17 @@ Ter Docker e as imagens PostgreSQL, MongoDB e Redis instalados.
 
 ## :arrow_forward: Como rodar a aplicação
 
-Agora navegue até a pasta criada e abra no Visual Studio Code, execute o comando `yarn` dentro da pasta no seu terminal para instalar todas as dependências. Após a instalação digite: `yarn dev:server`.
+Agora navegue até a pasta criada e abra no Visual Studio Code, execute o comando `yarn` dentro da pasta no seu terminal para instalar todas as dependências.
 
-Pronto! Agora basta acessar a aplicação à partir do link: http://localhost:3333/ ou do front-end web.
+Execute as migrations para o banco de dados: `yarn typeorm migration:run`.
 
-Na mesma pasta do projeto, no terminal, digite:
+Após a instalação digite: `yarn dev:server`.
+
+Pronto! Agora basta acessar a aplicação à partir do link: http://localhost:3333/ via insomnia, ou pelo front-end web.
 
 ## :building_construction: Como rodar os testes
+
+Na mesma pasta do projeto, no terminal, digite:
 
 ```bash
 yarn test
